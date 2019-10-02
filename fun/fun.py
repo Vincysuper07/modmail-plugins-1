@@ -60,26 +60,26 @@ class Fun(Cog):
     """Some Fun commands"""
   
     ball = [
-        "As I see it, yes",
-        "It is certain",
-        "It is decidedly so",
-        "Most likely",
-        "Outlook good",
-        "Signs point to yes",
-        "Without a doubt",
-        "Yes",
-        "Yes – definitely",
-        "You may rely on it",
-        "Reply hazy, try again",
-        "Ask again later",
-        "Better not tell you now",
-        "Cannot predict now",
-        "Concentrate and ask again",
-        "Don't count on it",
-        "My reply is no",
-        "My sources say no",
-        "Outlook not so good",
-        "Very doubtful"
+        "Come vedo, sì",
+        "È certo",
+        "È decisamente così",
+        "Più probabilmente",
+        "A vista è buono",
+        "I segni indicano sì",
+        "Senza dubbio",
+        "Si",
+        "Si, devinitivamente",
+        "Puoi contarci",
+        "Risposta confusa, riprova",
+        "Chiedi più tardi",
+        "Meglio non dirtelo ora",
+        "Non posso predire ora",
+        "Concentrati e chiedi di nuovo",
+        "Non contarci",
+        "La mia risposta è no",
+        "Le mie sorgenti dicono no",
+        "A vista non è cosi buono",
+        "Molto dubbioso"
     ]
     def __init__(self,bot):
         super().__init__()
@@ -122,30 +122,30 @@ class Fun(Cog):
         
     @commands.command()
     async def rps(self,ctx,your_choice:RPSParser):
-        """Play Rock,Paper,Scissors"""
+        """Gioca a Sasso, Carta, Forbici"""
         author = ctx.author
         player_choice = your_choice.choice
         if not player_choice:
-            return await ctx.send("This isn't a valid option. Try rock, paper, or scissors.")
-        bot_choice = choice((RPS.rock, RPS.paper, RPS.scissors))
+            return await ctx.send("Questa non è un'opzione valida. Prova sasso, carta o forbici.")
+        bot_choice = choice((RPS.sasso, RPS.carta, RPS.forbici))
         cond = {
-            (RPS.rock, RPS.paper): False,
-            (RPS.rock, RPS.scissors): True,
-            (RPS.paper, RPS.rock): True,
-            (RPS.paper, RPS.scissors): False,
-            (RPS.scissors, RPS.rock): False,
-            (RPS.scissors, RPS.paper): True,
+            (RPS.sasso, RPS.carta): False,
+            (RPS.sasso, RPS.forbici): True,
+            (RPS.carta, RPS.sasso): True,
+            (RPS.carta, RPS.forbici): False,
+            (RPS.forbici, RPS.sasso): False,
+            (RPS.forbici, RPS.carta): True,
         }
         if bot_choice == player_choice:
             outcome = None  # Tie
         else:
             outcome = cond[(player_choice, bot_choice)]
         if outcome is True:
-            await ctx.send(f"{bot_choice.value} You win {author.mention}!")
+            await ctx.send(f"{bot_choice.value} Hai vinto, {author.mention}!")
         elif outcome is False:
-            await ctx.send(f"{bot_choice.value} You lose {author.mention}!")
+            await ctx.send(f"{bot_choice.value} Hai perso, {author.mention}!")
         else:
-            await ctx.send(f"{bot_choice.value} We're square {author.mention}!")
+            await ctx.send(f"{bot_choice.value} Siamo quadrati, {author.mention}! (Questo ha mostrato il traduttore)")
     @commands.command(name="8ball",aliases=["8"])
     async def _8ball(self, ctx, *, question: str):
         """Ask 8 ball a question.
@@ -184,7 +184,7 @@ class Fun(Cog):
         
     @commands.command()
     async def meme(self, ctx):
-        """Get a random meme. The stuff of life."""
+        """Da un meme a caso. La roba della vita."""
         r = await self.bot.session.get("https://www.reddit.com/r/dankmemes/top.json?sort=top&t=day&limit=500")
         r = await r.json()
         r = box.Box(r)
@@ -200,7 +200,7 @@ class Fun(Cog):
         await ctx.send(embed=em)
     @commands.command()
     async def emojify(self, ctx, *, text: str):
-        """Turns your text into emojis!"""
+        """Converte il testo in emoji!"""
         try:
             await ctx.message.delete()
         except discord.Forbidden:
@@ -226,15 +226,15 @@ class Fun(Cog):
                 }
                 to_send += f":{numbers[char]}: "
             else:
-                return await ctx.send("Characters must be either a letter or number. Anything else is unsupported.")
+                return await ctx.send("I caratteri devono essere una lettera o un numero.  Tutto il resto non è supportato.")
         if len(to_send) > 2000:
-            return await ctx.send("Emoji is too large to fit in a message!")
+            return await ctx.send("L'emoji è troppo grande per adattarsi a un messaggio!")
         await ctx.send(to_send)
         
     @commands.command()
     @commands.guild_only()
     async def roast(self, ctx,*, user: discord.Member = None):
-        '''Roast someone! If you suck at roasting them yourself.'''
+        '''Insulterò qualcuno per te!'''
    
         msg = f"Hey, {user.mention}! " if user is not None else ""
         roasts = ["I'd give you a nasty look but you've already got one.", "If you're going to be two-faced, at least make one of them pretty.", "The only way you'll ever get laid is if you crawl up a chicken's ass and wait.", "It looks like your face caught fire and someone tried to put it out with a hammer.", "I'd like to see things from your point of view, but I can't seem to get my head that far up your ass.", "Scientists say the universe is made up of neutrons, protons and electrons. They forgot to mention morons.", "Why is it acceptable for you to be an idiot but not for me to point it out?", "Just because you have one doesn't mean you need to act like one.", "Someday you'll go far... and I hope you stay there.", "Which sexual position produces the ugliest children? Ask your mother.", "No, those pants don't make you look fatter - how could they?", "Save your breath - you'll need it to blow up your date.", "If you really want to know about mistakes, you should ask your parents.", "Whatever kind of look you were going for, you missed.", "Hey, you have something on your chin... no, the 3rd one down.", "I don't know what makes you so stupid, but it really works.", "You are proof that evolution can go in reverse.", "Brains aren't everything. In your case they're nothing.", "I thought of you today. It reminded me to take the garbage out.", "You're so ugly when you look in the mirror, your reflection looks away.", "Quick - check your face! I just found your nose in my business.", "It's better to let someone think you're stupid than open your mouth and prove it.", "You're such a beautiful, intelligent, wonderful person. Oh I'm sorry, I thought we were having a lying competition.", "I'd slap you but I don't want to make your face look any better.", "You have the right to remain silent because whatever you say will probably be stupid anyway."]
