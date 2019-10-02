@@ -145,7 +145,7 @@ class Fun(Cog):
         elif outcome is False:
             await ctx.send(f"{bot_choice.value} Hai perso, {author.mention}!")
         else:
-            await ctx.send(f"{bot_choice.value} Siamo pari, {author.mention}! (Questo ha mostrato il traduttore)")
+            await ctx.send(f"{bot_choice.value} Siamo pari, {author.mention}!")
     @commands.command(name="8ball",aliases=["8"])
     async def _8ball(self, ctx, *, question: str):
         """Ask 8 ball a question.
