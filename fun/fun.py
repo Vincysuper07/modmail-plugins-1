@@ -155,7 +155,7 @@ class Fun(Cog):
         if question.endswith("?") and question != "?":
             await ctx.send((choice(self.ball)))
         else:
-            await ctx.send("That doesn't look like a question.")
+            await ctx.send("Quella non sembra una domanda.")
 
     @commands.command(aliases=["badjoke"])
     async def dadjoke(self,ctx):
@@ -173,12 +173,12 @@ class Fun(Cog):
         
     @commands.command()
     async def say(self,ctx,* ,message):
-        """Make the bot say something"""
+        """Fai dire qualcosa al bot"""
         msg = escape(message,mass_mentions=True)
         await ctx.send(msg)
     @commands.command()
     async def reverse(self, ctx, *, text):
-        """!txeT ruoY esreveR"""
+        """!otseT out li etrevnI"""
         text =  escape("".join(list(reversed(str(text)))),mass_mentions=True)
         await ctx.send(text)
         
@@ -237,9 +237,9 @@ class Fun(Cog):
         '''Insulterò qualcuno per te!'''
    
         msg = f"Hey, {user.mention}! " if user is not None else ""
-        roasts = ["I'd give you a nasty look but you've already got one.", "If you're going to be two-faced, at least make one of them pretty.", "The only way you'll ever get laid is if you crawl up a chicken's ass and wait.", "It looks like your face caught fire and someone tried to put it out with a hammer.", "I'd like to see things from your point of view, but I can't seem to get my head that far up your ass.", "Scientists say the universe is made up of neutrons, protons and electrons. They forgot to mention morons.", "Why is it acceptable for you to be an idiot but not for me to point it out?", "Just because you have one doesn't mean you need to act like one.", "Someday you'll go far... and I hope you stay there.", "Which sexual position produces the ugliest children? Ask your mother.", "No, those pants don't make you look fatter - how could they?", "Save your breath - you'll need it to blow up your date.", "If you really want to know about mistakes, you should ask your parents.", "Whatever kind of look you were going for, you missed.", "Hey, you have something on your chin... no, the 3rd one down.", "I don't know what makes you so stupid, but it really works.", "You are proof that evolution can go in reverse.", "Brains aren't everything. In your case they're nothing.", "I thought of you today. It reminded me to take the garbage out.", "You're so ugly when you look in the mirror, your reflection looks away.", "Quick - check your face! I just found your nose in my business.", "It's better to let someone think you're stupid than open your mouth and prove it.", "You're such a beautiful, intelligent, wonderful person. Oh I'm sorry, I thought we were having a lying competition.", "I'd slap you but I don't want to make your face look any better.", "You have the right to remain silent because whatever you say will probably be stupid anyway."]
+        roasts = ["Ti darei uno sguardo cattivo ma ne hai già uno.", "Se hai due facce, almeno una rendila carina.", "Sembra che la tua faccia abbia preso fuoco e qualcuno abbia cercato di spegnerlo con un martello. LOL!", "Sembra che la tua faccia abbia preso fuoco e qualcuno abbia cercato di spegnerlo con un martello.", "Mi piacerebbe vedere le cose dal tuo punto di vista, ma non riesco ad avere la testa così in alto nel sedere.", "Gli scienziati affermano che l'universo è composto da neutroni, protoni ed elettroni. Si sono dimenticati di menzionare i deficienti.", "Perché è accettabile per te essere un idiota, ma non per me segnalarlo?", "Solo perché ne hai uno non significa che devi comportarti come tale.", "Un giorno andrai lontano... e spero che tu rimanga lì.", "Errore, riprova... aspetta,  sei tu l'errore!", "No, quei pantaloni non ti fanno sembrare più grasso, come potrebbero?", "Risparmia il fiato: ne avrai bisogno per far saltare il tuo appuntamento.", "Se vuoi davvero sapere degli errori, dovresti chiedere ai tuoi genitori.", " Qualunque sia il tipo di look che stavi cercando, ti sei perso.", "Ehi, hai qualcosa sul mento ... no, la terza in basso.", "Non so cosa ti rende così stupido, ma funziona davvero.", "Sei la prova che l'evoluzione può andare al contrario.", "I cervelli non sono tutto. Nel tuo caso non sono niente.", "Ti ho pensato oggi. Mi ha ricordato di portare fuori la spazzatura.", "Sei così brutto quando ti guardi allo specchio, il tuo riflesso distoglie lo sguardo.", "Veloce - controlla il tuo viso! Ho appena trovato il tuo naso nei miei affari.", "È meglio lasciare che qualcuno pensi che sei stupido piuttosto che aprire la bocca e dimostrarlo.", "Sei una persona così bella, intelligente, meravigliosa. Oh mi dispiace, pensavo che avessimo una competizione di bugie.", "Ti darei uno schiaffo ma non voglio far sembrare la tua faccia migliore.", "Hai il diritto di tacere perché qualunque cosa tu dica probabilmente sarà comunque stupida."]
         if str(user.id) == str(ctx.bot.user.id):
-            return await ctx.send(f"Uh?!! Nice try! I am not going to roast myself. Instead I am going to roast you now.\n\n {ctx.author.mention} {choice(roasts)}")
+            return await ctx.send(f"Uh?!! Bel tentativo! Non insulterò me stesso. Invece ora insulto te!\n\n {ctx.author.mention} {choice(roasts)}")
         await ctx.send(f"{msg} {choice(roasts)}")
 
     @commands.command(aliases=['sc'])
@@ -261,7 +261,7 @@ class Fun(Cog):
             
     @commands.command()
     async def cringe(self,ctx,* ,message):
-        """mAkE ThE TeXt cRiNgY!!"""
+        """rEnDe iL TeStO CrInGe!!"""
         text_list = list(message) #convert string to list to be able to edit it
         for i in range(0,len(message)):
             if i % 2 == 0:
