@@ -41,9 +41,9 @@ def escape(text: str, *, mass_mentions: bool = False, formatting: bool = False) 
     return text
 
 class RPS(Enum):
-    rock = "\N{MOYAI}"
-    paper = "\N{PAGE FACING UP}"
-    scissors = "\N{BLACK SCISSORS}"
+    sasso = "\N{MOYAI}"
+    carta = "\N{PAGE FACING UP}"
+    forbici = "\N{BLACK SCISSORS}"
 
 class RPSParser:
     def __init__(self, argument):
