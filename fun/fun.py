@@ -48,16 +48,16 @@ class RPS(Enum):
 class RPSParser:
     def __init__(self, argument):
         argument = argument.lower()
-        if argument == "rock":
-            self.choice = RPS.rock
-        elif argument == "paper":
-            self.choice = RPS.paper
-        elif argument == "scissors":
-            self.choice = RPS.scissors
+        if argument == "sasso":
+            self.choice = RPS.sasso
+        elif argument == "carta":
+            self.choice = RPS.carta
+        elif argument == "forbici":
+            self.choice = RPS.forbici
         else:
             self.choice = None
 class Fun(Cog):
-    """Some Fun commands"""
+    """Qualche comando Divertente"""
   
     ball = [
         "Come vedo, sì",
@@ -245,7 +245,7 @@ class Fun(Cog):
     @commands.command(aliases=['sc'])
     @commands.guild_only()
     async def smallcaps(self,ctx,*,message):
-        """ᴄᴏɴᴠᴇʀᴛ ʏᴏᴜʀ ᴛᴇxᴛ ᴛᴏ ꜱᴍᴀʟʟ ᴄᴀᴘꜱ!!"""
+        """ᴄᴏɴᴠᴇʀᴛᴇ ɪʟ ᴛᴜᴏ ᴛᴇꜱᴛᴏ ᴀ ᴜɴ ᴍᴀɪᴜꜱᴄᴏʟᴏ ᴘɪᴄᴄᴏʟᴏ!!"""
         alpha = list(string.ascii_lowercase)     
         converter = ['ᴀ', 'ʙ', 'ᴄ', 'ᴅ', 'ᴇ', 'ꜰ', 'ɢ', 'ʜ', 'ɪ', 'ᴊ', 'ᴋ', 'ʟ', 'ᴍ', 'ɴ', 'ᴏ', 'ᴘ', 'ǫ', 'ʀ', 'ꜱ', 'ᴛ', 'ᴜ', 'ᴠ', 'ᴡ', 'x', 'ʏ', 'ᴢ']
         new = ""
