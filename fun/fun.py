@@ -79,7 +79,8 @@ class Fun(Cog):
         "La mia risposta è no",
         "Le mie sorgenti dicono no",
         "A vista non è cosi buono",
-        "Molto dubbioso"
+        "Molto dubbioso",
+        "testù, testù, testù testù! testù testù testù"
     ]
     def __init__(self,bot):
         super().__init__()
