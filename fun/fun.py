@@ -86,7 +86,17 @@ class Fun(Cog):
         super().__init__()
         self.bot = bot
         #self.db = bot.plugin_db.get_partition(self)
-        
+     
+    @commands.command(name="inspirobot", aliases=["inspiro"])
+    async def _inspirobot(self, ctx):
+        """API su http://inspirobot.me"""
+        response = await self.bot.session.get("https://inspirobot.me/api?generate=true")
+        gen = (await response.content.readline()).decode('UTF-8')
+        color = 0x1E9705
+        e = discord.Embed(title = "InspiroBot", color=color)
+        e.set_image(url=f"{gen}")
+        await ctx.send(embed=e)
+   
     @commands.command()
     async def choose(self, ctx, *choices):
         """Choose between multiple options.
