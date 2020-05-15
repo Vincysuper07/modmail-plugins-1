@@ -56,7 +56,7 @@ class RPSParser:
             self.choice = RPS.forbici
         else:
             self.choice = None
-class Fun(Cog):
+class Divertimento(Cog):
     """Qualche comando Divertente"""
   
     ball = [
@@ -284,7 +284,7 @@ class Fun(Cog):
 
       
 def setup(bot):
-    bot.add_cog(Fun(bot))    
+    bot.add_cog(Divertimento(bot))    
 
 
 
