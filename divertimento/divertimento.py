@@ -34,8 +34,8 @@ def escape(text: str, *, mass_mentions: bool = False, formatting: bool = False) 
 
     """
     if mass_mentions:
-        text = text.replace("@everyone", "@\u200beveryone")
-        text = text.replace("@here", "@\u200bhere")
+        text = text.replace("@everyone", "@everyuno")
+        text = text.replace("@here", "@qui")
     if formatting:
         text = text.replace("`", "\\`").replace("*", "\\*").replace("_", "\\_").replace("~", "\\~")
     return text
